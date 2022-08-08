@@ -1,0 +1,40 @@
+.environment {
+  background: rgba(218, 240, 255, 0.2);
+  text-align: center;
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    p {
+      max-width: 70%;
+    }
+
+    margin-bottom: 94px;
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 32px;
+
+    h4 {
+      width: 100%;
+      padding: 0px 20px;
+    }
+
+    @include breakpoint-up(large) {
+      flex-direction: row;
+
+      h4 {
+        width: 30%;
+      }
+    }
+  }
+}

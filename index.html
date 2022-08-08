@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="language" content="pt-BR" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta
+      name="description"
+      content="Viagens sem burocracia e com mais economia. Venda de passagens, reservas em hotel e pacotes completos de viagens em um só lugar."
+    />
+    <meta name="robots" content="index" />
+    <meta name="author" content="AR Turismo" />
+    <meta property="og:type" content="page" /> -->
+
+    <!-- Google Fonts (Montserrat & Roboto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Flickity -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+
+    <!-- StyleSheets -->
+    <link rel="stylesheet" href="./scss/style.css" />
+
+    <!-- FavIcons -->
+    <link rel="shortcut icon" href="" type="image/x-icon" sizes="144x144" />
+    <title>SA Engenharia</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="overlay has-fade" onclick="handleBtnHamburgerClick()"></div>
+
+      <nav class="container container--pall flex flex-jc-c flex-ai-c">
+        <a href="/" class="header__logo hide-for-desktop">
+          <svg
+            id="logo-55"
+            width="168"
+            height="41"
+            viewBox="0 0 168 41"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M49.2775 28.9524H61.2295V25.3524H53.5255V11.7924H49.2775V28.9524Z"
+              class="cneutral"
+              fill="#999999"
+              stop-color="#999999"
+            ></path>
+            <path
+              d="M68.3107 26.5524C66.6067 26.5524 65.7187 25.0644 65.7187 22.8324C65.7187 20.6004 66.6067 19.0884 68.3107 19.0884C70.0147 19.0884 70.9267 20.6004 70.9267 22.8324C70.9267 25.0644 70.0147 26.5524 68.3107 26.5524ZM68.3347 29.3364C72.2947 29.3364 74.8867 26.5284 74.8867 22.8324C74.8867 19.1364 72.2947 16.3284 68.3347 16.3284C64.3987 16.3284 61.7587 19.1364 61.7587 22.8324C61.7587 26.5284 64.3987 29.3364 68.3347 29.3364Z"
+              class="cneutral"
+              fill="#999999"
+              stop-color="#999999"
+            ></path>
+            <path
+              d="M81.7411 33.2004C83.5651 33.2004 85.1731 32.7924 86.2531 31.8324C87.2371 30.9444 87.8851 29.6004 87.8851 27.7524V16.6644H84.1411V17.9844H84.0931C83.3731 16.9524 82.2691 16.3044 80.6371 16.3044C77.5891 16.3044 75.4771 18.8484 75.4771 22.4484C75.4771 26.2164 78.0451 28.2804 80.8051 28.2804C82.2931 28.2804 83.2291 27.6804 83.9491 26.8644H84.0451V28.0884C84.0451 29.5764 83.3491 30.4404 81.6931 30.4404C80.3971 30.4404 79.7491 29.8884 79.5331 29.2404H75.7411C76.1251 31.8084 78.3571 33.2004 81.7411 33.2004ZM81.7171 25.3764C80.2531 25.3764 79.2931 24.1764 79.2931 22.3284C79.2931 20.4564 80.2531 19.2564 81.7171 19.2564C83.3491 19.2564 84.2131 20.6484 84.2131 22.3044C84.2131 24.0324 83.4211 25.3764 81.7171 25.3764Z"
+              class="cneutral"
+              fill="#999999"
+              stop-color="#999999"
+            ></path>
+            <path
+              d="M95.5835 26.5524C93.8795 26.5524 92.9915 25.0644 92.9915 22.8324C92.9915 20.6004 93.8795 19.0884 95.5835 19.0884C97.2875 19.0884 98.1995 20.6004 98.1995 22.8324C98.1995 25.0644 97.2875 26.5524 95.5835 26.5524ZM95.6075 29.3364C99.5675 29.3364 102.159 26.5284 102.159 22.8324C102.159 19.1364 99.5675 16.3284 95.6075 16.3284C91.6715 16.3284 89.0315 19.1364 89.0315 22.8324C89.0315 26.5284 91.6715 29.3364 95.6075 29.3364Z"
+              class="cneutral"
+              fill="#999999"
+              stop-color="#999999"
+            ></path>
+            <path
+              d="M103.302 28.9524H107.214V16.6644H103.302V28.9524ZM103.302 14.9604H107.214V11.7924H103.302V14.9604Z"
+              class="cneutral"
+              fill="#999999"
+              stop-color="#999999"
+            ></path>
+            <path
+              d="M108.911 33.0084H112.823V27.6804H112.871C113.639 28.7124 114.767 29.3364 116.351 29.3364C119.567 29.3364 121.703 26.7924 121.703 22.8084C121.703 19.1124 119.711 16.3044 116.447 16.3044C114.767 16.3044 113.567 17.0484 112.727 18.1524H112.655V16.6644H108.911V33.0084ZM115.343 26.3124C113.663 26.3124 112.703 24.9444 112.703 22.9524C112.703 20.9604 113.567 19.4484 115.271 19.4484C116.951 19.4484 117.743 20.8404 117.743 22.9524C117.743 25.0404 116.831 26.3124 115.343 26.3124Z"
+              class="cneutral"
+              fill="#999999"
+              stop-color="#999999"
+            ></path>
+            <path
+              d="M128.072 29.3364C131.288 29.3364 133.664 27.9444 133.664 25.2564C133.664 22.1124 131.12 21.5604 128.96 21.2004C127.4 20.9124 126.008 20.7924 126.008 19.9284C126.008 19.1604 126.752 18.8004 127.712 18.8004C128.792 18.8004 129.536 19.1364 129.68 20.2404H133.28C133.088 17.8164 131.216 16.3044 127.736 16.3044C124.832 16.3044 122.432 17.6484 122.432 20.2404C122.432 23.1204 124.712 23.6964 126.848 24.0564C128.48 24.3444 129.968 24.4644 129.968 25.5684C129.968 26.3604 129.224 26.7924 128.048 26.7924C126.752 26.7924 125.936 26.1924 125.792 24.9684H122.096C122.216 27.6804 124.472 29.3364 128.072 29.3364Z"
+              class="cneutral"
+              fill="#999999"
+              stop-color="#999999"
+            ></path>
+            <path
+              d="M138.978 29.3124C140.682 29.3124 141.762 28.6404 142.65 27.4404H142.722V28.9524H146.466V16.6644H142.554V23.5284C142.554 24.9924 141.738 26.0004 140.394 26.0004C139.146 26.0004 138.546 25.2564 138.546 23.9124V16.6644H134.658V24.7284C134.658 27.4644 136.146 29.3124 138.978 29.3124Z"
+              class="cneutral"
+              fill="#999999"
+              stop-color="#999999"
+            ></path>
+            <path
+              d="M148.168 28.9524H152.08V22.0644C152.08 20.6004 152.8 19.5684 154.024 19.5684C155.2 19.5684 155.752 20.3364 155.752 21.6564V28.9524H159.664V22.0644C159.664 20.6004 160.36 19.5684 161.608 19.5684C162.784 19.5684 163.336 20.3364 163.336 21.6564V28.9524H167.248V20.9604C167.248 18.2004 165.856 16.3044 163.072 16.3044C161.488 16.3044 160.168 16.9764 159.208 18.4644H159.16C158.536 17.1444 157.312 16.3044 155.704 16.3044C153.928 16.3044 152.752 17.1444 151.984 18.4164H151.912V16.6644H148.168V28.9524Z"
+              class="cneutral"
+              fill="#999999"
+              stop-color="#999999"
+            ></path>
+            <path
+              d="M25.4099 1.97689L21.4769 0.923031L18.1625 13.2926L15.1702 2.12527L11.2371 3.17913L14.4701 15.2446L6.41746 7.19201L3.53827 10.0712L12.371 18.904L1.37124 15.9566L0.317383 19.8896L12.336 23.11C12.1984 22.5165 12.1256 21.8981 12.1256 21.2627C12.1256 16.7651 15.7716 13.1191 20.2692 13.1191C24.7668 13.1191 28.4128 16.7651 28.4128 21.2627C28.4128 21.894 28.3409 22.5086 28.205 23.0986L39.1277 26.0253L40.1815 22.0923L28.1151 18.8591L39.1156 15.9115L38.0617 11.9785L25.9958 15.2115L34.0484 7.15895L31.1692 4.27976L22.459 12.99L25.4099 1.97689Z"
+              class="ccustom"
+              fill="#ffffff"
+              stop-color="#ffffff"
+            ></path>
+            <path
+              d="M28.1943 23.1444C27.8571 24.57 27.1452 25.8507 26.1684 26.8768L34.0814 34.7899L36.9606 31.9107L28.1943 23.1444Z"
+              class="ccustom"
+              fill="#ffffff"
+              stop-color="#ffffff"
+            ></path>
+            <path
+              d="M26.0884 26.9596C25.0998 27.9693 23.8505 28.7228 22.4495 29.1111L25.3289 39.8571L29.2619 38.8032L26.0884 26.9596Z"
+              class="ccustom"
+              fill="#ffffff"
+              stop-color="#ffffff"
+            ></path>
+            <path
+              d="M22.3026 29.1504C21.6526 29.3175 20.9713 29.4063 20.2692 29.4063C19.517 29.4063 18.7886 29.3043 18.0971 29.1134L15.2151 39.8692L19.1481 40.923L22.3026 29.1504Z"
+              class="ccustom"
+              fill="#ffffff"
+              stop-color="#ffffff"
+            ></path>
+            <path
+              d="M17.9581 29.0737C16.5785 28.6661 15.3514 27.903 14.383 26.8904L6.45052 34.8229L9.32971 37.7021L17.9581 29.0737Z"
+              class="ccustom"
+              fill="#ffffff"
+              stop-color="#ffffff"
+            ></path>
+            <path
+              d="M14.3168 26.8203C13.365 25.8013 12.6717 24.5377 12.3417 23.1341L1.38334 26.0704L2.43719 30.0034L14.3168 26.8203Z"
+              class="ccustom"
+              fill="#ffffff"
+              stop-color="#ffffff"
+            ></path>
+          </svg>
+        </a>
+        <a
+          href="#"
+          class="header__toggle hide-for-desktop"
+          onclick="handleBtnHamburgerClick()"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+
+        <div class="header__links hide-for-mobile">
+          <a href="#about">Sobre nós</a>
+          <a href="#water">Água de piscina</a>
+          <a href="#effluents">Efluentes</a>
+          <a href="#brewery">Micro-cervejaria</a>
+          <a href="#management">Sistema de gestão</a>
+          <a href="#environment">Meio ambiente</a>
+          <a href="#safety">Saúde e segurança</a>
+        </div>
+      </nav>
+
+      <div class="header__menu has-fade" onclick="handleBtnHamburgerClick()">
+        <a href="#about">Sobre nós</a>
+        <a href="#water">Água de piscina</a>
+        <a href="#effluents">Efluentes</a>
+        <a href="#brewery">Micro-cervejaria</a>
+        <a href="#management">Sistema de gestão</a>
+        <a href="#environment">Meio ambiente</a>
+        <a href="#safety">Saúde e segurança</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="hero__image"></div>
+        <div class="hero__text">
+          <h1>Assessoria e tecnologia que você precisa para o seu negócio.</h1>
+          <p class="p--16">
+            Serviço técnico de qualidade com o objetivo de gerar eficiência,
+            segurança e prosperidade para os nossos clientes e toda sua cadeia
+            de valor.
+          </p>
+          <a class="button" href="/" target="_blank">Entre em contato</a>
+        </div>
+      </div>
+      <div class="hero__cta">
+        <a href="/" target="_blank">
+          <img src="/images/icons-svg/icon-wpp.svg" alt="Whatsapp Icon" />
+        </a>
+      </div>
+    </section>
+
+    <section class="about container container--pall" id="about">
+      <div class="about__left">
+        <h2>
+          Serviço técnico de qualidade gerando eficiência, segurança e
+          prosperidade.
+        </h2>
+        <p class="p--16">
+          Desde 1997, atendendo em todo o Brasil, assessoramos no ramo de
+          tratamento de água e, nos anos seguintes, ampliamos o escopo para os
+          mais diversos segmentos da indústria.
+        </p>
+        <p class="p--16">
+          Nossa estratégia é entregar um serviço de excelência e o nosso
+          crescimento está baseado no reconhecimento dos nossos clientes pelo
+          valor que agregamos a seus negócios.
+        </p>
+      </div>
+      <div class="about__right">
+        <div class="about__right__first">
+          <h4>Diversidade de clientes</h4>
+          <p class="p--16">
+            Atualmente possuímos diversos clientes na indústria de alimentos,
+            bebidas, cola PVA, produtos químicos, tratamento de água, tratamento
+            de água de piscina, postos de gasolina, entre outros.
+          </p>
+        </div>
+        <div class="about__right__second">
+          <h4>Reconhecimento pelo impacto positivo</h4>
+          <p class="p--16">
+            Queremos ser o melhor parceiro de nossos clientes, sendo
+            reconhecidos pelo impacto positivo que geramos com nossos serviços.
+          </p>
+
+          <p class="p--16">
+            A responsabilidade com os clientes, pessoas e com o meio ambiente é
+            necessária para a sociedade e um fator de sucesso para nossa
+            empresa.
+          </p>
+        </div>
+        <div class="about__right__third">
+          <h4>
+            Acreditamos na integridade, excelência e responsabilidade nos seus
+            sentidos mais amplos
+          </h4>
+          <p class="p--16">
+            Respeitamos a confidencialidade e a privacidade de nossos clientes e
+            atuamos com ética de acordo com os requisitos legais que nos
+            aplicam.
+          </p>
+          <p class="p--16">
+            Somos entusiastas no que fazemos e entregamos nosso melhor todos os
+            dias sempre ocm disposição pra aprender e melhorar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="water" id="water">
+      <div class="container container--pall">
+        <div class="water__intro flex flex-ai-c flex-jc-sb">
+          <h3>
+            Nosso objetivo é ajudar a resolver seus maiores desafios de
+            tratamento de água em suas operações.
+          </h3>
+          <p class="p--16">
+            Ajudamos você a otimizar a eficiência e desempenho do seu sistema de
+            tratamento de água com nossos serviços disponíveis abaixo.
+          </p>
+        </div>
+        <div
+          class="carousel"
+          data-flickity='{ "groupCells": true, "contain": true, "pageDots": false }'
+        >
+          <div class="carousel-cell">
+            <div class="card--carousel">
+              <img
+                src="/images/icons-svg/icon-water.svg"
+                alt="icon water treatment"
+              />
+              <h5>
+                Atuação de ponta à ponta nos sistemas de tratamento de água
+              </h5>
+              <p class="p--18 p--light">
+                Atuamos desde o dimensionamento de equipamentos da casa de
+                máquinas até o acompanhamento da qualidade da água para banho.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="card--carousel">
+              <img src="/images/icons-svg/icon-tool.svg" alt="icon tool" />
+              <h5>Manutenção preventiva e corretiva</h5>
+              <p class="p--18 p--light">
+                É o instrumento através do qual o profissional registra as
+                atividades técnicas solicitadas através de um contrato para qual
+                o mesmo foi contratado.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="card--carousel">
+              <img src="/images/icons-svg/icon-books.svg" alt="icon book" />
+              <h5>Capacitação e treinamentos teóricos e práticos</h5>
+              <p class="p--18 p--light">
+                Treinamentos de qualificação profissional formando piscineiros
+                com 32hrs de conteúdos teóricos e práticos na área de limpeza e
+                tratamento de piscinas.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="card--carousel">
+              <img
+                src="/images/icons-svg/icon-settings.svg"
+                alt="icon settings"
+              />
+              <h5>
+                Emissão de Anotação de Responsabilidade Técnica <br />
+                ( ART )
+              </h5>
+              <p class="p--18 p--light">
+                É o instrumento através do qual o profissional registra as
+                atividades técnicas solicitadas através de um contrato para qual
+                o mesmo foi contratado.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="card--carousel">
+              <img src="/images/icons-svg/icon-lab.svg" alt="icon lab" />
+              <h5>
+                Análises, interpretação de resultados e emissão de relatório com
+                recomendações
+              </h5>
+              <p class="p--18 p--light">
+                Análise dos parâmetros e especificações para emissão do laudo
+                periódico com as recomendações de correção.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner container container--pall">
+      <img
+        src="/images/img-png/card-pool.png"
+        alt="Swimming Pool in a hotel with a blue sky."
+      />
+
+      <div class="banner__text">
+        <div class="card">
+          <h4>As melhores soluções para o tratamento de água de piscina.</h4>
+          <p class="p--16">
+            Há 25 anos no ramo, com ampla experiência em condomínios, hotéis,
+            clubes, park hotéis e Spa's. Na S&A somos especialistas em
+            tratamento, e o resultado é comprovado.
+          </p>
+        </div>
+        <p class="p--16">
+          Realização de análises laboratoriáis, interpretação dos resultados,
+          emissão de laudos e relatórios com recomendações
+        </p>
+        <p class="p--16">
+          Dimensionamento de bombas e outros equipamentos com tubulações,
+          filtros de areia, UV e Ozônio.
+        </p>
+        <p class="p--16">Capacitação e treinamento teóricos e práticos</p>
+      </div>
+    </section>
+
+    <section class="effluents container container--pall" id="effluents">
+      <div class="effluents__intro">
+        <h3>Tratamento de esgoto</h3>
+        <p class="p--16">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus at
+          tellus arcu, eget praesent. Aliquam mattis ornare sodales fermentum,
+          lobortis sed. At scelerisque orci placerat viverra turpis condimentum
+          quam elit felis.Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Cursus at tellus arcu, eget praesent.
+        </p>
+        <p class="p--16">
+          Aliquam mattis ornare sodales fermentum, lobortis sed. At scelerisque
+          orci placerat viverra turpis condimentum quam elit felis.
+        </p>
+      </div>
+      <div class="effluents__cards">
+        <div class="card">
+          <p class="p--16">
+            Projeto, implantação, operação e manutenção de sistemas de
+            tratamento de efluentes
+          </p>
+        </div>
+        <div class="card">
+          <p class="p--16">Regularização das licenças ambientais</p>
+        </div>
+        <div class="card">
+          <p class="p--16">
+            Emissão de Anotação de Responsabilidade Técnica ( ART )
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="brewery container container--pall" id="brewery">
+      <div class="brewery__intro">
+        <h3>
+          A assessoria e responsabilidade técnica em Micro Cervejarias que você
+          precisa
+        </h3>
+        <p class="p--18">
+          Assessoria desde o projeto inicial, a abertura da cervejaria.
+          Realizamos todos os processos como manual de boas práticas de
+          fabricação, projeto e memorial descritivo, ART do químico responsável
+          pelo estabelecimento e muito mais!
+        </p>
+      </div>
+      <div class="brewery__cards">
+        <div class="card">
+          <img src="/images/icons-svg/icon-register.svg" alt="icon-register" />
+          <h5>Gestão completa para abertura e registro de cervejaria</h5>
+          <p class="p--18 p--light">
+            Acompanhamento de processos iniciais como alvarás e registro do cnpj
+            da empresa, até o registro final. Com clientes nos Estados de Santa
+            Catarina, Rio Grande do Sul e Rio de Janeiro, atendemos todas as
+            regiões do Brasil.
+          </p>
+        </div>
+        <div class="card">
+          <img src="/images/icons-svg/icon-check.svg" alt="icon check" />
+          <h5>Regularização no MAPA da empresa e de produtos</h5>
+          <p class="p--18 p--light">
+            O ministério da Agricultura Pecuária e Abastecimento (MAPA), visa
+            estabelecer critérios de qualidade para que os produtos sejam
+            classificados e padronizados de forma adequada. Uma empresa
+            regularizada tem acesso aos melhores padrões de qualidade,
+            oferecendo o melhor ao seu público alvo.
+          </p>
+        </div>
+        <div class="card">
+          <img src="/images/icons-svg/icon-search.svg" alt="icon search" />
+          <h5>
+            Análises microbiológicas e físico química da água e do produto nas
+            diversas fases do processo
+          </h5>
+          <p class="p--18 p--light">
+            Análises de produtos e bebidas desde sua fase inicial até a sua fase
+            final, água de consumo, piscinas, Spa's e ETE's em laboratório
+            especializado.
+          </p>
+        </div>
+        <div class="card">
+          <img
+            src="/images/icons-svg/icon-tasklist.svg"
+            alt="icon management"
+          />
+          <h5>Gestão de requisitos legais aplicáveis</h5>
+          <p class="p--18 p--light">
+            Gestão de um plano estratégico para identificar e monitorar o
+            atendimento e obrigações perante leis, decretos, resoluções,
+            portaria entre outras. A empresa precisa atender os requisitos
+            legais aplicáveis do seu ramo, manter em conformidade legal evita
+            que a empresa receba multas e esteja fora da lei.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="management container container--pall" id="management">
+      <div class="management__intro">
+        <h2>Sistemas de gestão</h2>
+        <p class="p--16">
+          Auxilia a organizar todas as tarefas de uma empresa onde irá aumentar
+          a produtividade da equipe e otimizar os resultados do negócio.
+        </p>
+      </div>
+      <div
+        class="carousel"
+        data-flickity='{ "groupCells": true, "contain": true, "pageDots": false }'
+      >
+        <div class="carousel-cell">
+          <div class="card--carousel--2">
+            <h5>Implementação de sistemas de gestão</h5>
+            <p class="p--18 p--light">
+              Tecnologia desenvolvida para cada cliente que irá organizar a
+              gestão do seu negócio criando caminhos de forma ágil, eficiente e
+              segura.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="card--carousel--2">
+            <h5>Auditorias internas</h5>
+            <p class="p--18 p--light">
+              Nossa meta é identificar oportunidades de melhoria e estruturar a
+              governança corporativa por meio de padronização e melhores
+              práticas.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="card--carousel--2">
+            <h5>Acompanhamento em auditorias externas de certificação</h5>
+            <p class="p--18 p--light">
+              Auxílio na comprovação do cumprimento dos requisitos legais, nos
+              moldes das normas aos organismos de certificação.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="card--carousel--2">
+            <h5>Auditorias de 2 partes em fornecedores</h5>
+            <p class="p--18 p--light">
+              Auditamos os seus fornecedores ou nós como fornecedores somos
+              auditados por nossos clientes alinhando as expectativas de ambas
+              as partes.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="card--carousel--2">
+            <h5>Ferramenta de tecnologia para gestão - Mosaikus</h5>
+            <p class="p--18 p--light">
+              Auxílio na implementação do Mosaikus na sua empresa, que é uma
+              ferramenta de gestão para a excelência. Simples e fácil.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="card--carousel--2">
+            <h5>Gestão dos requisitos legais aplicáveis</h5>
+            <p class="p--18 p--light">
+              Um plano estratégico para identificar e monitorar o atendimento e
+              obrigações perante leis, decretos, resoluções, portaria entre
+              outras.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="environment" id="environment">
+      <div class="container container--pall">
+        <div class="environment__intro">
+          <h2>Meio ambiente</h2>
+          <p class="p--16">
+            Atuamos na área ambiental em consultoria, assessoria, criação e
+            ajuste de documentações. Trabalhamos com gestão de resíduos,
+            efluentes, tratamento de solo, licenciamento e regularização.
+          </p>
+        </div>
+        <div class="environment__features">
+          <h4>Programa de gestão de ruídos</h4>
+          <h4>Levantamento de aspectos e impactos ambientais</h4>
+          <h4>Obtenção e regularização de licenciamento ambiental</h4>
+          <h4>
+            Programas de monitoramento ambiental, emissões atmosféricas e
+            efluentes
+          </h4>
+          <h4>Gerenciamento de indicadores de desempenho ambiental</h4>
+          <h4>Investigação de solos e recuperação de áreas degradadas</h4>
+        </div>
+      </div>
+    </section>
+
+    <section class="safety container container--pall" id="safety">
+      <div class="safety__intro">
+        <h2>Saúde e segurança</h2>
+        <p class="p--16">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus at
+          tellus arcu, eget praesent. Aliquam mattis ornare sodales fermentum,
+          lobortis sed. At scelerisque orci placerat viverra turpis condimentum
+          quam elit felis.Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Cursus at tellus arcu, eget praesent.
+        </p>
+      </div>
+      <div
+        class="carousel"
+        data-flickity='{ "groupCells": true, "contain": true, "pageDots": false }'
+      >
+        <div class="carousel-cell">
+          <div class="card--carousel--2">
+            <h5>
+              Implementação e treinamento de ferramentas e programas de saúde e
+              segurança
+            </h5>
+            <p class="p--18 p--light">
+              Tem foco no atendimento aos requisitos das normas
+              regulamentadoras, com o objetivo de oferecer melhorias contínuas
+              na saúde e segurança.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="card--carousel--2">
+            <h5>Análise de riscos ocupacionais e de processos</h5>
+            <p class="p--18 p--light">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar
+              leo eget feugiat a, purus maecenas. Fermentum adipiscing dolor
+              faucibus.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="card--carousel--2">
+            <h5>Investigação de incidentes</h5>
+            <p class="p--18 p--light">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar
+              leo eget feugiat a, purus maecenas. Fermentum adipiscing dolor
+              faucibus.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="card--carousel--2">
+            <h5>Auditorias de 2 partes em fornecedores</h5>
+            <p class="p--18 p--light">
+              Auditamos os seus fornecedores ou nós como fornecedores somos
+              auditados por nossos clientes alinhando as expectativas de ambas
+              as partes.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="card--carousel--2">
+            <h5>Programa de Prevenção de Riscos Ambientais (PPRA)</h5>
+            <p class="p--18 p--light">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar
+              leo eget feugiat a, purus maecenas. Fermentum adipiscing dolor
+              faucibus.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="card--carousel--2">
+            <h5>Programa de Proteção Respiratória (PPR)</h5>
+            <p class="p--18 p--light">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar
+              leo eget feugiat a, purus maecenas. Fermentum adipiscing dolor
+              faucibus.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="card--carousel--2">
+            <h5>Programa de Conversação Auditiva (PCA)</h5>
+            <p class="p--18 p--light">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar
+              leo eget feugiat a, purus maecenas. Fermentum adipiscing dolor
+              faucibus.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="card--carousel--2">
+            <h5>Plano de Prevenção e Proteção Contra Incêndios (PPCI)</h5>
+            <p class="p--18 p--light">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar
+              leo eget feugiat a, purus maecenas. Fermentum adipiscing dolor
+              faucibus.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="card--carousel--2">
+            <h5>Programa de Segurança Comportamental</h5>
+            <p class="p--18 p--light">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar
+              leo eget feugiat a, purus maecenas. Fermentum adipiscing dolor
+              faucibus.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="clients" id="clients">
+      <div class="container container--pall">
+        <h2>Nossos clientes</h2>
+        <div
+          class="carousel js-flickity"
+          data-flickity-options='{ "prevNextButtons": false, "autoPlay": true, "groupCells": true, "contain": true, "pageDots": false }'
+        >
+          <div class="carousel-cell">
+            <img src="/images/img-png/logo-hilton.png" alt="logo Hilton" />
+          </div>
+          <div class="carousel-cell">
+            <img src="/images/img-png/logo-fluidra.png" alt="logo Fluidra" />
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="/images/img-png/logo-fazenda-park.png"
+              alt="logo Fazenda Park"
+            />
+          </div>
+          <div class="carousel-cell">
+            <img src="/images/img-png/logo-monthez.png" alt="logo Monthez" />
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="/images/img-png/logo-schornstein.png"
+              alt="logo Schornstein"
+            />
+          </div>
+          <div class="carousel-cell">
+            <img src="/images/img-png/logo-fg.svg" alt="logo FG" />
+          </div>
+          <div class="carousel-cell">
+            <img src="/images/img-png/logo-sesc-itajai.png" alt="logo Sesc" />
+          </div>
+          <div class="carousel-cell">
+            <img src="/images/img-png/logo-splash.png" alt="logo Splash" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer container container--pall">
+      <h2>Entre em contato conosco</h2>
+      <p class="p--16">Rua Suécia, 240 - Itajaí - SC. 88306-790</p>
+      <p class="p--16">Telefone: 47 99662-1883 - 47 91234-5678</p>
+      <p class="p--16">E-mail de contato: contato@saengenharia.com.br</p>
+    </footer>
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

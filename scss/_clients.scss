@@ -1,0 +1,24 @@
+.clients {
+  background: $primary-dark;
+
+  h2 {
+    color: $white;
+    margin-bottom: 64px;
+  }
+
+  .carousel {
+    background: $primary-dark;
+    &-cell {
+      width: 25%;
+      height: 100px;
+      margin-right: 10px;
+      background: $primary-dark;
+      counter-increment: carousel-cell;
+
+      img {
+        width: 339px;
+        height: 64px;
+      }
+    }
+  }
+}

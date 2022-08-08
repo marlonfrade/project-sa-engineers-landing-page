@@ -1,0 +1,21 @@
+// Variables (colors, font sizes, breakpoints and animations)
+@import "variables";
+@import "mixins";
+@import "animations";
+
+// Globals Config
+@import "globals";
+
+// Sections
+@import "header";
+@import "hero";
+@import "about";
+@import "water";
+@import "banner";
+@import "effluents";
+@import "brewery";
+@import "management";
+@import "environment";
+@import "safety";
+@import "clients";
+@import "footer";

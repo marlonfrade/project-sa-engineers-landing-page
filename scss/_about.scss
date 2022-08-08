@@ -1,0 +1,38 @@
+.about {
+  text-align: center;
+  margin-top: 80px;
+
+  @include breakpoint-up(large) {
+    height: 100vh;
+    margin-top: 0px;
+    text-align: start;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 173px;
+  }
+
+  &__left {
+    width: 100%;
+
+    h2 {
+      margin-bottom: 40px;
+    }
+    p {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__right {
+    width: 100%;
+    margin-top: 80px;
+
+    @include breakpoint-up(large) {
+      margin-top: 0px;
+    }
+
+    div {
+      margin-bottom: 80px;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.brewery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+
+  &__intro {
+    text-align: center;
+    padding-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    p {
+      font-weight: 400;
+      color: $primary-light;
+    }
+  }
+
+  @include breakpoint-up(large) {
+    flex-direction: row;
+    gap: 173px;
+    align-items: flex-start;
+
+    &__intro {
+      text-align: start;
+      padding-top: 64px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 32px;
+      gap: 32px;
+      background: $white;
+      border: 1px solid rgba(193, 229, 255, 0.5);
+      border-radius: 16px;
+
+      img {
+        padding: 0;
+        margin: 0;
+      }
+      h5 {
+        margin: 0;
+        padding: 0;
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}

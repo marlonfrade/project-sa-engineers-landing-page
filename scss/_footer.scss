@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoint-up(large) {
+    align-items: flex-start;
+  }
+
+  h2 {
+    margin-bottom: 32px;
+  }
+}
