@@ -307,14 +307,14 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 32px;
+  padding: 32px 0;
   background: hsl(0deg, 0%, 100%);
   border: 1px solid rgba(193, 229, 255, 0.5);
   border-radius: 16px;
 }
 @media (min-width: 64em) {
   .card--carousel {
-    height: 313px;
+    padding: 32px;
   }
 }
 .card--carousel--2 {
@@ -327,11 +327,6 @@ a:hover {
   background: hsl(0deg, 0%, 100%);
   border: 1px solid rgba(193, 229, 255, 0.5);
   border-radius: 16px;
-}
-@media (min-width: 64em) {
-  .card--carousel--2 {
-    height: 250px;
-  }
 }
 
 .card--accessory {
@@ -628,6 +623,7 @@ a:hover {
 .about {
   text-align: center;
   margin-top: 80px;
+  padding-bottom: 0;
 }
 @media (min-width: 64em) {
   .about {
@@ -688,18 +684,27 @@ a:hover {
 }
 .water .carousel {
   background: hsl(0deg, 0%, 100%);
+  height: 100%;
 }
 .water .carousel-cell {
   text-align: left;
   width: 100%;
   height: 100%;
   counter-increment: carousel-cell;
+  padding-bottom: 0px;
+}
+@media (min-width: 40em) {
+  .water .carousel-cell {
+    counter-increment: carousel-cell;
+    margin-right: 32px;
+    width: 100%;
+  }
 }
 @media (min-width: 64em) {
   .water .carousel-cell {
+    counter-increment: carousel-cell;
     margin-right: 32px;
-    width: 33%;
-    height: 313px;
+    width: 32%;
   }
 }
 .water-cell {
@@ -707,9 +712,22 @@ a:hover {
   gap: 32px;
   background: hsl(0deg, 0%, 100%);
 }
+.water-cell .card--carousel {
+  padding: 32px;
+}
 .water-cell .card--carousel img {
   width: 58px;
   height: 58px;
+  padding: 0;
+  margin: 0;
+}
+.water-cell .card--carousel h5 {
+  margin: 0;
+  padding: 0;
+}
+.water-cell .card--carousel p {
+  margin: 0;
+  padding: 0;
 }
 .water .flickity-button {
   position: absolute;
@@ -725,11 +743,19 @@ a:hover {
   width: 24px;
   height: 24px;
   padding: 18px;
-  top: 317px;
+  top: 98%;
+  left: 70%;
+}
+@media (min-width: 40em) {
+  .water .flickity-prev-next-button.previous {
+    left: 85%;
+    top: 240px;
+  }
 }
 @media (min-width: 64em) {
   .water .flickity-prev-next-button.previous {
-    left: 93%;
+    left: 91%;
+    top: 280px;
   }
 }
 .water .flickity-prev-next-button.next {
@@ -737,8 +763,20 @@ a:hover {
   width: 24px;
   height: 24px;
   padding: 18px;
-  right: 10px;
-  top: 317px;
+  top: 98%;
+  left: 88%;
+}
+@media (min-width: 40em) {
+  .water .flickity-prev-next-button.next {
+    left: 95%;
+    top: 240px;
+  }
+}
+@media (min-width: 64em) {
+  .water .flickity-prev-next-button.next {
+    left: 96%;
+    top: 280px;
+  }
 }
 .water .flickity-prev-next-button .flickity-button-icon {
   position: absolute;
@@ -938,6 +976,7 @@ a:hover {
 }
 .management .carousel {
   background: hsl(0deg, 0%, 100%);
+  height: 100%;
 }
 .management .carousel-cell {
   text-align: left;
@@ -945,65 +984,74 @@ a:hover {
   counter-increment: carousel-cell;
   padding-bottom: 0px;
 }
-@media (min-width: 64em) {
+@media (min-width: 40em) {
   .management .carousel-cell {
+    counter-increment: carousel-cell;
     margin-right: 32px;
-    width: 33%;
-    height: 313px;
+    width: 100%;
   }
 }
-.management-cell {
-  width: 533px;
-  gap: 32px;
-  background: hsl(0deg, 0%, 100%);
+@media (min-width: 64em) {
+  .management .carousel-cell {
+    counter-increment: carousel-cell;
+    margin-right: 32px;
+    width: 32%;
+  }
 }
-.management-cell .card--carousel {
-  padding: 32px;
-}
-.management-cell .card--carousel img {
-  width: 58px;
-  height: 58px;
-  padding: 0;
-  margin: 0;
-}
-.management-cell .card--carousel h5 {
-  margin: 0;
-  padding: 0;
-}
-.management-cell .card--carousel p {
-  margin: 0;
-  padding: 0;
-}
-.management .flickity-button {
+
+.flickity-button {
   position: absolute;
   background: hsl(0deg, 0%, 100%);
   border: none;
   color: #0c3553;
 }
-.management .flickity-button:hover {
+.flickity-button:hover {
   color: #155a8c;
 }
-.management .flickity-prev-next-button.previous {
+
+.flickity-prev-next-button.previous {
   border: 1px solid #c1e5ff;
   width: 24px;
   height: 24px;
   padding: 18px;
-  top: 250px;
+  top: 98%;
+  left: 70%;
 }
-@media (min-width: 64em) {
-  .management .flickity-prev-next-button.previous {
-    left: 93%;
+@media (min-width: 40em) {
+  .flickity-prev-next-button.previous {
+    left: 85%;
+    top: 240px;
   }
 }
-.management .flickity-prev-next-button.next {
+@media (min-width: 64em) {
+  .flickity-prev-next-button.previous {
+    left: 91%;
+    top: 280px;
+  }
+}
+
+.flickity-prev-next-button.next {
   border: 1px solid #c1e5ff;
   width: 24px;
   height: 24px;
   padding: 18px;
-  right: 10px;
-  top: 250px;
+  top: 98%;
+  left: 88%;
 }
-.management .flickity-prev-next-button .flickity-button-icon {
+@media (min-width: 40em) {
+  .flickity-prev-next-button.next {
+    left: 95%;
+    top: 240px;
+  }
+}
+@media (min-width: 64em) {
+  .flickity-prev-next-button.next {
+    left: 96%;
+    top: 280px;
+  }
+}
+
+.flickity-prev-next-button .flickity-button-icon {
   position: absolute;
   left: 31%;
   top: 20%;
@@ -1167,10 +1215,12 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 @media (min-width: 64em) {
   .footer {
     align-items: flex-start;
+    text-align: left;
   }
 }
 .footer h2 {

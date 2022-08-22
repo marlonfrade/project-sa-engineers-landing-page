@@ -3,9 +3,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 
   @include breakpoint-up(large) {
     align-items: flex-start;
+    text-align: left;
   }
 
   h2 {

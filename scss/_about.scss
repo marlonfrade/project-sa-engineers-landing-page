@@ -1,6 +1,7 @@
 .about {
   text-align: center;
   margin-top: 80px;
+  padding-bottom: 0;
 
   @include breakpoint-up(large) {
     height: 100vh;

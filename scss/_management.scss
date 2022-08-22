@@ -17,6 +17,7 @@
 
   .carousel {
     background: $white;
+    height: 100%;
   }
 
   .carousel-cell {
@@ -24,74 +25,74 @@
     width: 100%;
     counter-increment: carousel-cell;
     padding-bottom: 0px;
-    @include breakpoint-up(large) {
+
+    @include breakpoint-up(medium) {
+      counter-increment: carousel-cell;
       margin-right: 32px;
-      width: 33%;
-      height: 313px;
+      width: 100%;
     }
-  }
 
-  &-cell {
-    width: 533px;
-    gap: 32px;
-    //   margin-right: 32px;
-    background: $white;
-    .card--carousel {
-      padding: 32px;
-      img {
-        width: 58px;
-        height: 58px;
-        padding: 0;
-        margin: 0;
-      }
-      h5 {
-        margin: 0;
-        padding: 0;
-      }
-
-      p {
-        margin: 0;
-        padding: 0;
-      }
-    }
-  }
-
-  .flickity-button {
-    position: absolute;
-    background: $white;
-    border: none;
-    color: $primary-dark;
-
-    &:hover {
-      color: $primary-light;
-    }
-  }
-
-  .flickity-prev-next-button.previous {
-    border: 1px solid #c1e5ff;
-    width: 24px;
-    height: 24px;
-    padding: 18px;
-    top: 250px;
     @include breakpoint-up(large) {
-      left: 93%;
+      counter-increment: carousel-cell;
+      margin-right: 32px;
+      width: 32%;
     }
   }
+}
 
-  .flickity-prev-next-button.next {
-    border: 1px solid #c1e5ff;
-    width: 24px;
-    height: 24px;
-    padding: 18px;
-    right: 10px;
-    top: 250px;
+.flickity-button {
+  position: absolute;
+  background: $white;
+  border: none;
+  color: $primary-dark;
+
+  &:hover {
+    color: $primary-light;
+  }
+}
+
+.flickity-prev-next-button.previous {
+  border: 1px solid #c1e5ff;
+  width: 24px;
+  height: 24px;
+  padding: 18px;
+  top: 98%;
+  left: 70%;
+
+  @include breakpoint-up(medium) {
+    left: 85%;
+    top: 240px;
   }
 
-  .flickity-prev-next-button .flickity-button-icon {
-    position: absolute;
-    left: 31%;
-    top: 20%;
-    width: 40%;
-    height: 59%;
+  @include breakpoint-up(large) {
+    left: 91%;
+    top: 280px;
   }
+}
+
+.flickity-prev-next-button.next {
+  border: 1px solid #c1e5ff;
+  width: 24px;
+  height: 24px;
+  padding: 18px;
+  top: 98%;
+  left: 88%;
+
+  @include breakpoint-up(medium) {
+    left: 95%;
+    top: 240px;
+  }
+
+  @include breakpoint-up(large) {
+    left: 96%;
+    top: 280px;
+  }
+}
+
+.flickity-prev-next-button .flickity-button-icon {
+  position: absolute;
+  left: 31%;
+  top: 20%;
+  width: 40%;
+  height: 59%;
 }

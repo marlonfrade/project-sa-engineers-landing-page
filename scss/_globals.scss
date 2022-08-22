@@ -182,7 +182,8 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 32px;
+  padding: 32px 0;
+
   //   gap: 14px;
   background: $white;
   border: 1px solid rgba(193, 229, 255, 0.5);
@@ -190,7 +191,7 @@ a:hover {
   //   box-shadow: 0 8px 32px 0 rgba(193, 229, 255, 0.5);
 
   @include breakpoint-up(large) {
-    height: 313px;
+    padding: 32px;
   }
 
   &--2 {
@@ -206,9 +207,9 @@ a:hover {
     border-radius: 16px;
     //   box-shadow: 0 8px 32px 0 rgba(193, 229, 255, 0.5);
 
-    @include breakpoint-up(large) {
-      height: 250px;
-    }
+    // @include breakpoint-up(large) {
+    //   height: 250px;
+    // }
   }
 }
 
