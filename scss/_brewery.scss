@@ -33,6 +33,7 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
+
     .card {
       display: flex;
       flex-direction: column;
@@ -42,20 +43,40 @@
       background: $white;
       border: 1px solid rgba(193, 229, 255, 0.5);
       border-radius: 16px;
+      margin-bottom: 32px;
+
+      @include breakpoint-up(large){
+        margin-bottom: 0px;
+
+        img {
+          padding: 0;
+          margin: 0;
+        }
+        h5 {
+          margin: 0;
+          padding: 0;
+        }
+  
+        p {
+          margin: 0;
+          padding: 0;
+        }
+      }
 
       img {
         padding: 0;
-        margin: 0;
+        margin-bottom: 16px;
       }
       h5 {
-        margin: 0;
+        margin-bottom: 16px;
         padding: 0;
       }
 
       p {
-        margin: 0;
+        margin-bottom: 16px;
         padding: 0;
       }
+
     }
   }
 }

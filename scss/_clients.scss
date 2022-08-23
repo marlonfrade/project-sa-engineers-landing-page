@@ -1,5 +1,6 @@
 .clients {
   background: $primary-dark;
+  margin-top: 20px;
 
   h2 {
     color: $white;
@@ -9,9 +10,12 @@
   .carousel {
     background: $primary-dark;
     &-cell {
-      width: 25%;
+      width: 100%;
+      @include breakpoint-up(medium){
+        width: 25%;
+        margin-right: 10px;
+      }
       height: 100px;
-      margin-right: 10px;
       background: $primary-dark;
       counter-increment: carousel-cell;
 

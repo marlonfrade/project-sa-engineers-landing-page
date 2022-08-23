@@ -5,13 +5,26 @@
   &__intro {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    max-width: 533px;
+    max-width: 537px;
     margin-bottom: 80px;
     text-align: center;
 
+    h2{
+      margin-bottom: 40px;
+    }
+
     @include breakpoint-up(large) {
       text-align: start;
+
+      h2{
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  .card--carousel{
+    @include breakpoint-up(large){
+      height: 100%;
     }
   }
 
@@ -56,7 +69,7 @@
   width: 24px;
   height: 24px;
   padding: 18px;
-  top: 98%;
+  top: 90%;
   left: 70%;
 
   @include breakpoint-up(medium) {
@@ -66,7 +79,7 @@
 
   @include breakpoint-up(large) {
     left: 91%;
-    top: 280px;
+    top: 270px;
   }
 }
 
@@ -75,7 +88,7 @@
   width: 24px;
   height: 24px;
   padding: 18px;
-  top: 98%;
+  top: 90%;
   left: 88%;
 
   @include breakpoint-up(medium) {
@@ -85,7 +98,7 @@
 
   @include breakpoint-up(large) {
     left: 96%;
-    top: 280px;
+    top: 270px;
   }
 }
 
