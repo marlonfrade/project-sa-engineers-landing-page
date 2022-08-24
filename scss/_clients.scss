@@ -20,8 +20,16 @@
       counter-increment: carousel-cell;
 
       img {
-        width: 339px;
-        height: 64px;
+        width: 200px;
+        height: 100px;
+
+      }
+
+      &:nth-child(1){
+        img{
+          width: 350px;
+          height: 100px;
+        }
       }
     }
   }
