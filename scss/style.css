@@ -527,7 +527,7 @@ a:hover {
 }
 .hero__image {
   position: relative;
-  background-image: url("/images/img-png/hero-bg.png");
+  background-image: url("/images/img-png/hero-bg.min.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center left;
@@ -1265,13 +1265,15 @@ a:hover {
     margin-right: 10px;
   }
 }
-.clients .carousel-cell img {
-  width: 200px;
-  height: 100px;
-}
-.clients .carousel-cell:nth-child(1) img {
-  width: 350px;
-  height: 100px;
+@media (min-width: 64em) {
+  .clients .carousel-cell img {
+    width: 200px;
+    height: 100px;
+  }
+  .clients .carousel-cell:nth-child(1) img {
+    width: 350px;
+    height: 100px;
+  }
 }
 
 .footer {

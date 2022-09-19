@@ -19,18 +19,21 @@
       background: $primary-dark;
       counter-increment: carousel-cell;
 
-      img {
-        width: 200px;
-        height: 100px;
-
-      }
-
-      &:nth-child(1){
-        img{
-          width: 350px;
+      @include breakpoint-up(large){
+        img {
+          width: 200px;
           height: 100px;
         }
+  
+        &:nth-child(1){
+          img{
+            width: 350px;
+            height: 100px;
+          }
+        }
+
       }
+
     }
   }
 }
